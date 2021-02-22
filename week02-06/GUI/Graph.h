@@ -170,7 +170,8 @@ struct Lines : Shape {
 };
 
 struct Open_polyline : Shape {
-	using Shape::Shape;
+	Open_polyline(){};
+	Open_polyline(initializer_list<Point> lst) : Shape(lst){};
 	void add(Point p) { Shape::add(p); }
 	void draw_lines() const;
 };
