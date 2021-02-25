@@ -79,6 +79,9 @@ int main()
 	//Exercises
 
 	//1
+
+	Simple_window ex1 {Point{100,100}, xmax, ymax, "#1"};
+
 	Rectangle blue_rect ({Point(50,50)}, 100, 40);
 	blue_rect.set_color(Color::blue);
 
@@ -90,11 +93,15 @@ int main()
 	red_rect.add(Point(200,90));
 	red_rect.set_color(Color::red);
 
-	win.attach(blue_rect);
-	win.attach(red_rect);
+	ex1.attach(blue_rect);
+	ex1.attach(red_rect);
+	ex1.wait_for_button();
 
 
 	//2
+
+	Simple_window ex2 {Point{100,100}, xmax, ymax, "#2"};
+
 	Rectangle howdy_rect ({Point(50,140)},100,30);
 
 	Text howdy ({Point(65,160)}, "Howdy!");
@@ -102,11 +109,14 @@ int main()
 	howdy.set_font(Font::courier);
 	howdy.set_font_size(20);
 
-	win.attach(howdy_rect);
-	win.attach(howdy);
-
+	ex2.attach(howdy_rect);
+	ex2.attach(howdy);
+	ex2.wait_for_button();
 
 	//3
+
+	Simple_window ex3 {Point{100,100}, xmax, ymax, "#3"};
+
 	Text init_C ({Point(400,200)}, "C");
 
 	init_C.set_font_size(150);
@@ -125,12 +135,15 @@ int main()
 	init_B.set_color(Color::dark_magenta);
 	init_B.set_font(Font::times_bold);
 
-	win.attach(init_C);
-	win.attach(init_S);
-	win.attach(init_B);
+	ex3.attach(init_C);
+	ex3.attach(init_S);
+	ex3.attach(init_B);
+	ex3.wait_for_button();
 
 
 	//4 ezt tuti nagyon tulbonyolitottam, okosabb megoldas nem jutott az eszembe :(
+
+	Simple_window ex4 {Point{100,100}, xmax, ymax, "#4"};
 
 	constexpr int checker_start_x = 50;
 	constexpr int checker_start_y = 220;
@@ -173,20 +186,17 @@ int main()
     		row++;
     	}
 
-    	win.attach(checker[i]);
+    	ex4.attach(checker[i]);
     }
 
+    ex4.attach(box);
+    ex4.wait_for_button();
 
-	//5 ezt lehet szebben? :(
+	//5
+
+	Simple_window ex5 {Point{100,100}, xmax, ymax, "#5"};
 
 	Rectangle frame_rect(Point(xmax/6,ymax/8),2*xmax/3,3*ymax/4);
-
-	/*Polygon frame;
-
-	frame.add(Point(xmax/6-24,ymax/8-24));
-	frame.add(Point(2*xmax/3+xmax/6+24,ymax/8-24));
-	frame.add(Point(2*xmax/3+xmax/6+24,ymax/8+24+3*ymax/4));
-	frame.add(Point(xmax/6-24,ymax/8+24+3*ymax/4));*/
 
 	Lines frame;
 	frame.add(Point(xmax/6-48,ymax/8-24),Point(2*xmax/3+xmax/6+48,ymax/8-24));
@@ -197,22 +207,23 @@ int main()
 	frame.set_color(Color::red);
 	frame.set_style(Line_style(Line_style::solid,48));
 
-	win.attach(frame_rect);
-	win.attach(frame);
+	ex5.attach(frame_rect);
+	ex5.attach(frame);
 
 
 	//6
 
+
 	Circle doesnt_fit(Point(6000,5000),100); //gondolom odateszi, csak nem latjuk
 
-	Simple_window big {Point{100,100}, 4800,2400, "tul nagy"}; //aranyosan lekicsinyiti az ablakot
+	Simple_window big {Point{100,100}, 4800,2400, "#6"}; //aranyosan lekicsinyiti az ablakot
 
 	big.attach(doesnt_fit);
-	//big.wait_for_button();
+	big.wait_for_button();
 
 	//7
 
-	Simple_window house {Point{100,100}, 600,800, "haziko"};
+	Simple_window house {Point{100,100}, 600,800, "#7"};
 
 	Rectangle base(Point(150,400),300,300);
 	base.set_fill_color(Color::yellow);
@@ -250,9 +261,54 @@ int main()
 	house.attach(window_bars);
 	house.attach(top_window1);
 	house.attach(top_window2);
-	
 
 	house.wait_for_button();
+
+	//8
+
+	Simple_window rings {Point{100,100}, 800,400, "#8"};
+
+	Circle blue_ring (Point(150,150),100);
+	blue_ring.set_color(Color::blue);
+	blue_ring.set_style(Line_style(Line_style::solid,5));
+
+	Circle black_ring (Point(375,150),100);
+	black_ring.set_color(Color::black);
+	black_ring.set_style(Line_style(Line_style::solid,5));
+
+	Circle red_ring (Point(600,150),100);
+	red_ring.set_color(Color::red);
+	red_ring.set_style(Line_style(Line_style::solid,5));
+
+	Circle yellow_ring (Point(275,250),100);
+	yellow_ring.set_color(Color::yellow);
+	yellow_ring.set_style(Line_style(Line_style::solid,5));
+
+	Circle green_ring (Point(500,250),100);
+	green_ring.set_color(Color::green);
+	green_ring.set_style(Line_style(Line_style::solid,5));
+
+
+	rings.attach(blue_ring);
+	rings.attach(black_ring);
+	rings.attach(red_ring);
+	rings.attach(yellow_ring);
+	rings.attach(green_ring);
+
+	rings.wait_for_button();
+
+	//9
+
+	Simple_window eszti {Point{100,100}, 1280,720, "Torok Eszter"};
+	Image kep {Point{0,100}, "eszti.jpg"};
+	Text caption {Point{500,75}, "Eszti, a baratnom"};
+	caption.set_font_size(50);
+
+	eszti.attach(kep);
+	eszti.attach(caption);
+	eszti.wait_for_button();
+
+	//end
 
 	//win.attach(img);
 	//win.attach(circ);
@@ -267,10 +323,6 @@ int main()
 	//win.attach(poly_rect);
 	//win.attach(mark);
 	//win.attach(sizes);
-	
-	
-
-	win.attach(box);
-    //win.wait_for_button();
+	//win.wait_for_button();
 
 }
