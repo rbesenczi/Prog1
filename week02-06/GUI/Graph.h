@@ -246,6 +246,25 @@ public:
 	int radius() const { return r; }
 };
 
+struct Ellipse : Shape {
+	Ellipse(Point p, int ww, int hh)
+	:w{ ww }, h{ hh } {
+		add(Point{ p.x - ww, p.y - hh });
+	}
+
+	void draw_lines() const;
+
+	Point center() const { return{ point(0).x + w, point(0).y + h }; }
+
+	void set_major(int ww) { w=ww; }
+	int major() const { return w; }
+	void set_minor(int hh) { h=hh; }
+	int minor() const { return h; }
+private:
+	int w;
+	int h;
+};
+
 struct Marked_polyline : Open_polyline
 {
 	Marked_polyline(const string& m): mark(m) { }
