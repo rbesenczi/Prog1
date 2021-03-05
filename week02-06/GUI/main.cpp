@@ -53,6 +53,10 @@ int main()
 
 	Circle c {Point{700,700}, 100};
 
+	Ellipse e {Point{500,500}, 100, 50};
+	e.set_fill_color(Color::red);
+
+	win.attach(e);
 	win.attach(ii);
 	win.attach(c);
 	win.attach(t);
