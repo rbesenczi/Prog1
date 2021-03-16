@@ -22,8 +22,6 @@ void Window::init()
    show();
 } 
 
-//---------------------------------------------------- 
-
 void Window::draw()
 {
 	Fl_Window::draw();
@@ -32,9 +30,9 @@ void Window::draw()
 
 void Window::attach(Widget& w)
 {
-	begin();			// FTLK: begin attaching new Fl_Wigets to this window
-		w.attach(*this);	// let the Widget create its Fl_Wigits
-	end();				// FTLK: stop attaching new Fl_Wigets to this window
+	begin();
+		w.attach(*this);
+	end();
 }
 
 void Window::detach(Widget& b)
@@ -45,15 +43,13 @@ void Window::detach(Widget& b)
 void Window::attach(Shape& s)
 {
 		shapes.push_back(&s);
-//		s.attached = this;
 }
 void Window::detach(Shape& s)
 {
-		for (unsigned int i = shapes.size(); 0<i; --i)	// guess last attached will be first released
+		for (unsigned int i = shapes.size(); 0<i; --i)
 			if (shapes[i-1]==&s)
-				shapes.erase(shapes.begin()+(i-1));//&shapes[i-1]);
+				shapes.erase(shapes.begin()+(i-1));
 }
-
 
 void Window::put_on_top(Shape& p) {
 	for (int i=0; i<shapes.size(); ++i) {
@@ -68,4 +64,4 @@ void Window::put_on_top(Shape& p) {
 
 int gui_main() { return Fl::run(); }
 
-} // Graph
+} 

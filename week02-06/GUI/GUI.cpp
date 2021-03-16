@@ -4,18 +4,16 @@
 
 using namespace Graph_lib;
 
-
 void Button::attach(Window& win)
-	{
-		pw = new Fl_Button(loc.x, loc.y, width, height, label.c_str());
-		pw->callback(reinterpret_cast<Fl_Callback*>(do_it), &win); // pass the window
-		own = &win;
-	}
+{
+	pw = new Fl_Button(loc.x, loc.y, width, height, label.c_str());
+	pw->callback(reinterpret_cast<Fl_Callback*>(do_it), &win);
+	own = &win;
+}
 
 int In_box::get_int()
 {
 	Fl_Input& pi = reference_to<Fl_Input>(pw);
-//	return atoi(pi.value());
 	const char* p = pi.value();
 	if (!isdigit(p[0])) return -999999;
 	return atoi(p);
@@ -78,6 +76,5 @@ int Menu::attach(Button& b)
 
 int Menu::attach(Button* p)
 {
-//	owned.push_back(p);
 	return attach(*p);
 }
