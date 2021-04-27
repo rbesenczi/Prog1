@@ -1,0 +1,9 @@
+In this thesis, a Smart City application is presented, called the Robocar World Championship. 
+The application is in the research domain of smart cities and autonomous cars and can offer a platform to investigate theories and conduct new research ideas. 
+The system itself consists of several components written in C++11 using shared memory segments and several external libraries, such as the Boost Graph Library. 
+The output of the Real-Time Traffic Analyzer is an aggregated data that can be served as an input for the Robocar City Emulator. 
+This component can simulate traffic in urban areas. The original version of the system was inspected and was proven to be wrong regarding its simulation algorithm. 
+So, we developed an algorithm that can provide a stationary distribution of the cars in a given time period. The proposed algorithm is based on graph theory and a Markov model of probability theory. 
+The solution uses OpenStreetMap as a geographical data source and an open dataset, called the Taxi Trajectory Prediction. Based on these data sources a graph and a transition matrix on it can be built. 
+This matrix contains the transitions between adjacent nodes, i.e., a probability vector for each node. This probability vector shows the probability of transition to the adjacent node for each node. 
+In this thesis, the method of the construction of such a matrix is given. In addition, it is shown that the proposed algorithm can simulate such traffic where the distribution of cars is stationary and this stationary distribution is unique for a given graph and transition probability matrix.
