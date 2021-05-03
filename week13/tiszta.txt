@@ -1,0 +1,12 @@
+A processz és a szál olyan absztrakciók, amelyeket egy program teremt meg számunkra, az ope
+rációs rendszer, azaz a kernel. A konkrétabb tárgyalás kedvéért gondoljunk most egy saját C
+ programunkra! Ha papíron, vagy a monitoron egy szerkesztőben nézegetjük a forrását, akkor 
+valami élettelen dolgot vizsgálunk, amelyben látunk lexikális és szintaktikai egységeket, u
+tasításokat, blokkokat, függvényeket; nem túl érdekes. Ha lefordítjuk és futtatjuk, akkor v
+iszont már valami élő dolgot vizsgálhatunk, ez a processz, amely valahol ott van a tárban. 
+Ennek a tárterületnek az elején a program környezete, a parancssor argumentumai, a lokális 
+változóterülete és a paraméterátadás bonyolítására szolgáló veremterüle található, amelyet 
+a dinamikusan foglalható területe, a halom követ. Majd jön az inicializált globális és stat
+ikus változóit hordozó adat szegmens és az iniciálatlan BSS. Végül jön a kódszegmense, majd
+ a konstansai. Ennek a tárterületnek a kernelben is van egy vetülete, ez a
+PCB. hogy
