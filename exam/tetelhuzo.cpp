@@ -4,7 +4,7 @@
 #include <algorithm>
 
 int main()
-	// Mondj egy számot egy és nyolc között!
+	// Mondj egy számot egy és tíz között!
 {
 	std::srand(unsigned(std::time(0))); // Random inicializáció
 
@@ -17,7 +17,9 @@ int main()
 			"GUI (PPP Ch 16)",
 			"Template osztályok, template függvények. (PPP Ch 19)",
 			"Generikus tárolók (PPP Ch 20)", 
-			"Generikus algoritmusok (PPP Ch 21)"
+			"Generikus algoritmusok (PPP Ch 21)",
+			"Numerikusok (PPP Ch 24)",
+			"C (PPP Ch 27)"
 		};
 
 	std::random_shuffle(tetelek.begin(), tetelek.end()); // Random keverés
