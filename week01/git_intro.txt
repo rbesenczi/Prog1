@@ -1,0 +1,6 @@
+Introduction to Git
+===================================
+
+1. Login to GitHub
+2. Generate SSH keys
+
