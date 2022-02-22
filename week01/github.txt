@@ -1,5 +1,0 @@
-How to create your GitHub repository.
-======================================================
-
-1. Login to your GitHub.
-2. Generate SSH keys.
