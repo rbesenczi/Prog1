@@ -1,0 +1,6 @@
+Introduction to Git
+___________________________
+
+1. Login to GitHub
+2. Generate private key.
+
