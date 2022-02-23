@@ -3,4 +3,7 @@ ___________________________
 
 1. Login to GitHub
 2. Generate private key.
+3. Upload public key.
+4. Clone repository.
+5. Git config username...
 
