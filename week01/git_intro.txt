@@ -2,4 +2,7 @@ Introduction to Git
 _______________________________
 
 1. Log in to GitHub.
-2. Generate SSH key. 
+2. Generate SSH key.
+3. Clone repository.
+4. Config git.
+ 
